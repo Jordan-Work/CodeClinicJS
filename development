@@ -1,0 +1,99 @@
+[33me29eb05[m Added Better Description and Hero Unit
+[33m579148c[m 06_04 Done
+[33m2cc4777[m AJAX Call
+[33m425e868[m 06_03begin
+[33ma50c064[m 06_target
+[33m4588132[m 05_05 Reading Exif Data
+[33m789ae36[m 05_04 Displaying Images
+[33mf53623a[m 05_03end
+[33m69619c5[m fixed id
+[33m1ce5586[m fixed merge
+[33m0d031f9[m modified html text
+[33mf76dca2[m 05_03 begin
+[33mf3af074[m target code
+[33mc697f3f[m captions working
+[33m24853a9[m photos and all exif tags displaying
+[33m9106850[m 04_06 Controlling with mouse
+[33me965785[m 04_05 Plugging Modules
+[33m144f03e[m 04_04 Basic Sounds
+[33m7351017[m finished 04_03
+[33mb53fcda[m 04_start
+[33m769a10b[m fixed we to you
+[33mfb6f81b[m minor changes
+[33m06cecb8[m 04_01 Audio
+[33m50ba976[m changed name of board
+[33m1f14a78[m added ability to turn pieces on/off
+[33mea5ae51[m Modified variable names for clarity
+[33me476ac7[m target
+[33m1fb0eda[m working solution -display
+[33m50cb669[m working through problem
+[33mb935746[m queens in groups
+[33mce65dc0[m 1queen not working
+[33mdf62530[m 02_07 Finished Comparing Images
+[33m3449d5a[m 02_06 AJAX Parsing HTML
+[33m2b1baa6[m 02_05 Image Processing
+[33m3e9f8be[m 02_04 added drag and drop:
+[33m851fb99[m 02_04 start
+[33mc7b09ad[m fixed rogue scripts:
+[33m0cbf810[m 02_target
+[33mee013cd[m 02_target
+[33ma43d79b[m target
+[33mefccea9[m populate images
+[33meee6148[m working drop image, form events
+[33m694870f[m working dropzone:
+[33m3d71b5c[m 02_ImageCompare
+[33m50f178d[m 01_09 Dynamic Dates
+[33m8a5181d[m 01_08 Formatting Dates
+[33m11287a2[m 01_07 Charting
+[33mb949d9b[m 01_06 Parsing Data
+[33mfb66b63[m forward to 01_05
+[33mdee2996[m 01_04 Temp Rollback
+[33m8f9ce28[m 01_05 Mean and Median Functions
+[33m592139b[m called the function
+[33ma589145[m 01_04_start
+[33med37ceb[m final target
+[33m15959c5[m working chart with date selectors
+[33mad8f837[m working AJAX call with always
+[33m6b6761b[m jsonp call not working
+[33m0f174c0[m Working chart loading from static url
+[33mc744eba[m working with non null values
+[33me1ce934[m working timeline chart
+[33m0880b44[m Category visualization
+[33m7259101[m working table from data file
+[33m2f3e36e[m working towards a avg and mean solution
+[33meaacb4d[m fixed date ranges
+[33m567327e[m Bootstrap Layout Done, Original Data file
+[33m6fe7815[m Updated readme and cleared out stuff
+[33mf4897ce[m added readme and hero image
+[33m579e556[m 03_07 Randomizing Carousels
+[33m8616b8b[m 03_07b
+[33m13d809f[m 03_06 Creating a Full Screen Carousel
+[33mc5f0b61[m 03_05 Creating a fading animation
+[33m05ff1e9[m 03_04 Creating Carousel Indicators Automatically
+[33mf24ac3a[m 03_03 Smoothing our page scrolls
+[33m4b9b5e2[m 03_02 Styling our Scrolling Navigation
+[33m5a54cf4[m 03_01 Using Scrollspy with Single Page Sites
+[33m111efd9[m 02_10 Footer
+[33m5d935cc[m 02_09 Using Background Images
+[33m89a11d8[m 02_08 Responsive columns
+[33mb981e1c[m 02_07 Tackling a complex fluid layout
+[33m518755c[m 02_06 Using Multiple Breakpoints
+[33m5a9d7b1[m First Pages
+[33m8c9434c[m 02_04 Handling injections with Media Queries
+[33mb11f538[m 02_03 Branding and Toggle Styles
+[33m76ba66e[m 02_02 header navigation
+[33m6267c8c[m 02_01 Basic Styles
+[33m19adf72[m 01_10 Building a Carousel
+[33m00a0706[m 01_09 Footer Layout
+[33mb2a4c41[m 01_08 Controlling Nav Positions
+[33md2337db[m 01_07 Basic Navigation
+[33ma01a7ce[m 01_06 Finishing our Simple Layout
+[33m0026c45[m new 01_05 video
+[33me806da8[m 01_04 Using Rows & Columns
+[33mf3cf9e3[m 01_03
+[33me7c305f[m start without any bootstrap
+[33me75d84c[m start code
+[33m925c94e[m cleanup of css and html files
+[33m2824c17[m got rid of images for uploads
+[33m9235abf[m new gitignore file
+[33mccaaeec[m first commit

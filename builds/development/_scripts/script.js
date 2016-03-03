@@ -41,39 +41,72 @@
 
 
 
+$(document).ready(function () {
+//
+//    var dp1 = $('#datepicker1').datepicker({
+//        format: "dd/mm/yyyy"
+//    });
+//
+//
+//    var dp2 = $('#datepicker2').datepicker({
+//        format: "dd/mm/yyyy"
+//    });
+//
+//    if (dp1.datepicker.changeDate == true){
+//        console.log("dateChanged");
+//    }
+//
+    function datePass (date){
+        var dateFormated =new Date(date);
+        var mth = dateFormated.getUTCMonth();
+        var day = dateFormated.getUTCDay();
+        var year = dateFormated.getUTCFullYear();
 
+        console.log(''+mth+''+day+''+year);;
+    }
+
+
+    var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+    var checkin = $('#datepicker1').datepicker({
+        onRender: function(date) {
+            //add inital date load
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        }
+    }).on('changeDate', function(ev) {
+        if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            datePass(newDate);
+            newDate.setDate(newDate.getDate() + 1);
+            checkout.setValue(newDate);
+
+        }
+        checkin.hide();
+
+        $('#datepicker2')[0].focus();
+    }).data('datepicker');
+
+    var checkout = $('#datepicker2').datepicker({
+        onRender: function(date) {
+            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+        }
+    }).on('changeDate', function(ev) {
+        checkout.hide();
+    }).data('datepicker');
+
+
+ });
 
 
 
 $(function(){
     'use strict';
-  //  $('#datepicker1').datepicker('show');
+    //$('#datepicker1.datepicker').datepicker('show');
+
 
     //date pickers
-    //var nowTemp = new Date();
-    //var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-    //
-    //var checkin = $('#datepicker1').datepicker({
-    //    onRender: function(date) {
-    //        return date.valueOf() < now.valueOf() ? 'disabled' : '';
-    //    }
-    //}).on('changeDate', function(ev) {
-    //    if (ev.date.valueOf() > checkout.date.valueOf()) {
-    //        var newDate = new Date(ev.date)
-    //        newDate.setDate(newDate.getDate() + 1);
-    //        checkout.setValue(newDate);
-    //    }
-    //    checkin.hide();
-    //    $('#dpd2')[0].focus();
-    //}).data('datepicker');
-    //var checkout = $('#dpd2').datepicker({
-    //    onRender: function(date) {
-    //        return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-    //    }
-    //}).on('changeDate', function(ev) {
-    //    checkout.hide();
-    //}).data('datepicker');
-    //
+
 
 
 
@@ -183,9 +216,14 @@ $(function(){
     }//load chart
     loadChart();
 
+var fromDate;
+var toDate;
 
+ fromDate = new Date();
+ fromDate.setDate(fromDate.getDate()-31);
 
-
+ toDate = new Date();
+    toDate.setDate(fromDate.getDate()-1);
 
 });//Page Loaded
 

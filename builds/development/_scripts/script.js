@@ -41,75 +41,17 @@
 
 
 
-$(document).ready(function () {
-//
-//    var dp1 = $('#datepicker1').datepicker({
-//        format: "dd/mm/yyyy"
-//    });
-//
-//
-//    var dp2 = $('#datepicker2').datepicker({
-//        format: "dd/mm/yyyy"
-//    });
-//
-//    if (dp1.datepicker.changeDate == true){
-//        console.log("dateChanged");
-//    }
-//
-    function datePass (date){
-        var dateFormated =new Date(date);
-        var mth = dateFormated.getUTCMonth();
-        var day = dateFormated.getUTCDay();
-        var year = dateFormated.getUTCFullYear();
-
-        console.log(''+mth+''+day+''+year);;
-    }
-
-
-    var nowTemp = new Date();
-    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-
-    var checkin = $('#datepicker1').datepicker({
-        onRender: function(date) {
-            //add inital date load
-            return date.valueOf() < now.valueOf() ? 'disabled' : '';
-        }
-    }).on('changeDate', function(ev) {
-        if (ev.date.valueOf() > checkout.date.valueOf()) {
-            var newDate = new Date(ev.date)
-            datePass(newDate);
-            newDate.setDate(newDate.getDate() + 1);
-            checkout.setValue(newDate);
-
-        }
-        checkin.hide();
-
-        $('#datepicker2')[0].focus();
-    }).data('datepicker');
-
-    var checkout = $('#datepicker2').datepicker({
-        onRender: function(date) {
-            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-        }
-    }).on('changeDate', function(ev) {
-        checkout.hide();
-    }).data('datepicker');
-
-
- });
-
-
 
 $(function(){
     'use strict';
-    //$('#datepicker1.datepicker').datepicker('show');
-
-
-    //date pickers
 
 
 
 
+
+    var datePicker1 = '#datepicker1';
+    var datePicker2 = '#datepicker2';
+    linkedDP(datePicker1,datePicker2);
 
 
 
@@ -170,12 +112,13 @@ $(function(){
 
     ///toggles, line => area , bar => bar , pie = > pie with toggles through date selection pagination
 
-    function generateChart (data){
+    function generateChart (data,style){
         var chart = c3.generate({
             data:{
                 x:'x',
                 columns: data,
-                type:'area',
+                type:style,
+
                 groups: [
                             ['medianTemperature','meanTemperature','medianPressure,meanPressure','medianSpeed','meanSpeed']
                         ],
@@ -198,32 +141,159 @@ $(function(){
         });
     }
 
-    function loadChart() {
+
+
+var startDate;
+var endDate;
+
+    function loadChart(sD,eD) {
         $.ajax({
-        url: 'http://foundationphp.com/phpclinic/podata.php?&raw&callBack=?',
-        jsonpCallback: 'jsonReturnData',
-        dataType: 'jsonp',
-        data:{
-            startDate:20150305,
-            endDate:20150326,
-            format: 'json'
-        },
-        success: function (response){
-            console.log(processData(response));
-            generateChart(processData(response));
-        }//success
-    }) //AJAX Call
+            url: 'http://foundationphp.com/phpclinic/podata.php?&raw&callBack=?',
+            jsonpCallback: 'jsonReturnData',
+            dataType: 'jsonp',
+            data:{
+                startDate:sD,
+                endDate:eD,
+                format: 'json'
+            },
+            success: function (response){
+                console.log(processData(response));
+                generateChart(processData(response),chartStyle);
+            }//success
+        }); //AJAX Call
     }//load chart
-    loadChart();
 
-var fromDate;
-var toDate;
 
- fromDate = new Date();
- fromDate.setDate(fromDate.getDate()-31);
+    function datePass(stDate,enDate) {
+        //clicked +=1;
+        var startMod = new Date(stDate);
+        var endMod = new Date(enDate);
+        //start mods
+        var sMth;
+         if (startMod.getUTCMonth() < 10) {
+             sMth = ('0' + (startMod.getUTCMonth() + 1));
+        }else {
+             sMth = (startMod.getUTCMonth() + 1);
+         }
+        var sDay;
+        if (startMod.getUTCDate() < 10) {
+            sDay = ('0' + startMod.getUTCDate());
+        }else {
+            sDay = startMod.getUTCDate();
+        }
 
- toDate = new Date();
-    toDate.setDate(fromDate.getDate()-1);
+        var sYear = startMod.getUTCFullYear();
+        //end mods
+        var eMth;
+
+        if ((endMod.getUTCMonth() + 1) < 10 ) {
+            eMth = ('0' + (endMod.getUTCMonth() + 1));
+        }else {
+            eMth = (endMod.getUTCMonth() + 1);
+        }
+        var eDay;
+
+        if (endMod.getUTCDate() < 10 ) {
+            eDay = ('0' + endMod.getUTCDate());
+        }else {
+            eDay = endMod.getUTCDate();
+        }
+        var eYear = endMod.getUTCFullYear();
+
+        var sDateFormated = ''+sYear + '' + sMth+ '' +''+ sDay ;
+        var eDateFormated = ''+eYear + '' + eMth+ '' +''+ eDay;
+        if (startDate.getUTCFullYear() >= 2016){
+            var chartElement= $( "#chart");
+
+            //loadChart('20150301','20150302');
+            chart.innerHTML = "Please Pick a More Recent Date";
+            //chartElement.style. =
+        }
+        loadChart(sDateFormated, eDateFormated);
+
+        console.log(sDateFormated, eDateFormated);
+
+    }
+
+    function linkedDP(dp1, dp2){
+
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+        var checkin = $(dp1).datepicker({
+            onRender: function (date) {
+                //add inital date load
+                return date.valueOf() >= now.valueOf() ? 'disabled' : '';
+            }
+        }).on('changeDate', function (ev) {
+            // if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newStartDate = new Date(ev.date);
+            startDate = newStartDate;
+            newStartDate.setDate(newStartDate.getDate() + 1);
+            checkout.setValue(newStartDate);
+
+            // }
+            checkin.hide();
+
+            $(dp2)[0].focus();
+        }).data('datepicker');
+        //dp2 function
+        var checkout = $(dp2).datepicker({
+            onRender: function (date) {
+                return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+            }
+        }).on('changeDate', function (ev) {
+
+            endDate =  new Date(ev.date);
+            datePass(startDate,endDate);
+            checkout.hide();
+        }).data('datepicker');
+    }
+
+
+    if (startDate == null && endDate == null) {
+        loadChart('20150301','20150401');
+    }
+
+
+    var chartStyle = 'bar';
+    //styleFilter.onClick = function() {
+    var barButton = document.getElementById('btn-0');
+    var areaButton = document.getElementById('btn-1');
+    var lineButton = document.getElementById('btn-2');
+
+    barButton.addEventListener('click', function() {
+        chartStyle = 'bar';
+        if (startDate != null && endDate != null){
+        datePass(startDate,endDate);
+        }else{
+            loadChart('20150301','20150401');
+        }
+    }, false);
+
+    areaButton.addEventListener('click', function() {
+        chartStyle = 'area';
+         if (startDate != null && endDate != null){
+        datePass(startDate,endDate);
+         }else{
+             loadChart('20150301','20150401');
+        }
+    }, false);
+
+    lineButton.addEventListener('click', function() {
+        chartStyle = 'line';
+         if (startDate != null && endDate != null){
+        datePass(startDate,endDate);
+         }else {
+             loadChart('20150301','20150401');
+         }
+    }, false);
+
+
+
+
+
+
+
 
 });//Page Loaded
 

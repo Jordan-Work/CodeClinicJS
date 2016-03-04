@@ -196,7 +196,27 @@ em {
 .more {
 	display: block;
 }
-/*layout styles*/ 
+/*layout styles*/
+
+.navbar{
+    margin:0;
+    border-radius: 0;
+    background-color: #e8e8e8;
+    border: none;
+    border-bottom:4px solid black ;
+}
+.navbar-brand {
+
+    padding: 0px;
+}
+.navbar-brand>img {
+
+    height: 100%;
+    margin-left: 15px;
+    margin-right: 30px;
+    width: auto;
+}
+
 
 /*header styles*/
 

@@ -1,0 +1,307 @@
+/* CSS Document */
+
+/*copyright lynda.com 2012
+feel free to use these styles as you wish
+attribution would be nice, but not required
+*/
+
+/* roux academy color palette
+#FFCF7D     rgb(255, 207, 125)  LIGHT-ORANGE
+#FBAE2C     rgb(251, 174, 44)  BASE-ORANGE
+#DA8C07     rgb(218, 140, 7)  MID-ORANGE
+#AB6C00     rgb(171, 108, 0)  DARK-ORANGE
+
+#B683BA      rgb(182, 131, 186)  LIGHT LAVENDER
+#A858A3    rgb(168, 88, 163)  DARK LAVENDER
+#0263AE    rgb(173, 169, 130)  DARK TAN
+#D8D5BC   rgb(2, 99, 174)  DARK BLUE
+#F9E482   rgb(249, 228, 130)  LIGHT YELLOW
+#BFBFBF rgb(191, 191, 191) LIGHT GRAY
+#414042    rgb(65, 64, 66)  DARK GRAY
+*/
+/*Font declarations*/
+@font-face {
+    font-family: 'Bitter';
+    src: url('../_fonts/Bitter-Regular-webfont.eot');
+    src: url('../_fonts/Bitter-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/Bitter-Regular-webfont.woff') format('woff'),
+         url('../_fonts/Bitter-Regular-webfont.ttf') format('truetype'),
+         url('../_fonts/Bitter-Regular-webfont.svg#BitterRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bitter';
+    src: url('../_fonts/Bitter-Italic-webfont.eot');
+    src: url('../_fonts/Bitter-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/Bitter-Italic-webfont.woff') format('woff'),
+         url('../_fonts/Bitter-Italic-webfont.ttf') format('truetype'),
+         url('../_fonts/Bitter-Italic-webfont.svg#BitterItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Bitter';
+    src: url('../_fonts/Bitter-Bold-webfont.eot');
+    src: url('../_fonts/Bitter-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/Bitter-Bold-webfont.woff') format('woff'),
+         url('../_fonts/Bitter-Bold-webfont.ttf') format('truetype'),
+         url('../_fonts/Bitter-Bold-webfont.svg#BitterBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DroidSans';
+    src: url('../_fonts/DroidSans-webfont.eot');
+    src: url('../_fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/DroidSans-webfont.woff') format('woff'),
+         url('../_fonts/DroidSans-webfont.ttf') format('truetype'),
+         url('../_fonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DroidSans';
+    src: url('../_fonts/DroidSans-Bold-webfont.eot');
+    src: url('../_fonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/DroidSans-Bold-webfont.woff') format('woff'),
+         url('../_fonts/DroidSans-Bold-webfont.ttf') format('truetype'),
+         url('../_fonts/DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+/*Global styles -----------------------------------------------------------------------------------------------------------*/
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align:baseline;
+	font: inherit;
+}
+
+/*html5 display rule*/
+address, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+	display: block;
+}
+html {
+	background: rgb(65, 64, 66);
+}
+body {
+	font: 100% DroidSans, Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	font-weight:normal;
+	font-style:normal;
+}
+article {
+	clear: both;
+	margin-bottom: 3px;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	background: url(../_images/diag_pattern.png);
+}
+p {
+	margin-bottom: 1em;
+}
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+/* Global classes */
+
+/*micro-clearfix by Nicolas Gallagher http://nicolasgallagher.com/micro-clearfix-hack/*/
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+.cr {
+	clear: right;
+}
+.cl {
+	clear: left;
+}
+.cb {
+	clear: both;
+}
+.nrm {
+	margin-right: 0;
+}
+.orange {
+	text-transform: uppercase;
+	color: rgb(251, 174, 44);
+	font-weight: bold;
+}
+.lightOrangeBackground{
+    background-color: rgb(255, 207, 125);
+}
+.orangeBackground{
+    background-color: rgb(251, 174, 44);
+}
+.midOrangeBackground{
+    background-color: rgb(218, 140, 7);
+}
+.darkOrangeBackground{
+    background-color: rgb(171, 108, 0);
+}
+.headerBackground{
+     background-color: #F1C40F;
+ }
+.filterBackground{
+     background-color: #ECF0F1;
+     border-bottom: 7px solid #7b7f80;
+ }
+.graphBackground{
+    background-color: #ECF0F1;
+ }
+
+.headerBackground{
+    background-color: #2f3334;
+}
+.footerBackground{
+    background-color: #2e2e2e;
+}
+
+/*#FFCF7D     rgb(255, 207, 125)  LIGHT-ORANGE*/
+/*#FBAE2C      rgb(251, 174, 44)  BASE-ORANGE*/
+/*#DA8C07     rgb(218, 140, 7)  MID-ORANGE*/
+/*#AB6C00     rgb(171, 108, 0)  DARK-ORANGE*/
+
+
+.blue {
+	text-transform: uppercase;
+	color: rgb(2, 99, 174);
+	font-weight: bold;
+}
+.lavender {
+	text-transform: uppercase;
+	color: rgb(168, 88, 163);
+	font-weight: bold;
+}
+.more {
+	display: block;
+}
+/*layout styles*/
+
+.navbar{
+    margin:0;
+    border-radius: 0;
+    background-color: #e8e8e8;
+    border: none;
+    border-bottom:4px solid black ;
+}
+.navbar-brand {
+
+    padding: 0px;
+}
+.navbar-brand>img {
+
+    height: 100%;
+    margin-left: 15px;
+    margin-right: 30px;
+    width: auto;
+}
+
+
+/*header styles*/
+
+header  h1{
+    color: #d3d3d3;
+    font:1.8em Bitter, sans-serif;
+}
+header  h2{
+    color: #d3d3d3;
+    font:1.2em Bitter, sans-serif;
+}
+
+.img-rounded{
+    height: 55px;
+    width:auto;
+}
+.pull-left{
+    padding-right: 20px;
+}
+.headerDim{
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+/*header styles END*/
+/*filter styles*/
+.containerPadding{
+    padding:0;
+}
+.filterContainerPad {
+    width: 100%;
+    max-width: 700px;
+}
+.filterDim{
+    padding-top: 19px;
+    padding-bottom: 17px;
+}
+/*.btn-primary{*/
+    /*color:#555;*/
+    /*background-color:#ECF0F1;*/
+    /*border-color: #CCC;*/
+/*}*/
+/*.btn-primary.active{*/
+    /*background-color: #EEE;*/
+    /*color:#555;*/
+    /*border-color: #CCC;*/
+/*}*/
+
+.inputPaddingLeft{
+    padding-left: 0;
+}
+.inputPaddingRight{
+    padding-right: 0;
+}
+
+/*Article styles*/
+.articleDim{
+    margin:0;
+    height: 29px;
+    padding-top: 19px;
+    padding-bottom: 17px;
+}
+.pTop{
+    margin-top:30px;
+    margin-left: 10px;
+    font: 1.2em  Helvetica, sans-serif;
+}
+
+
+.graphArea{
+    height: 540px;
+}
+
+/*Footer Styles*/
+.media{
+    padding-bottom: 15px;
+}
+.pstylefooter{
+
+    color: #e8e8e8;
+    font: .84em Bitter, sans-serif;
+}
+.footerPanel{
+    margin-top:15px;
+}
+.footerPanel p {
+    color: #2e2e2e;
+    padding: 10px;
+}

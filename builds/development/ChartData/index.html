@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Graphic Design Programs</title>
+<!--&lt;!&ndash;[if lt IE 9]>-->
+<!--<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>-->
+<!--<![endif]&ndash;&gt;-->
+<!--&lt;!&ndash;[if lt IE 9]>-->
+<!--<![endif]&ndash;&gt;-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="datepicker/css/datepicker.css">
+  <link rel="stylesheet" href="_scripts/c3-0.4.10/c3.min.css">
+  <link href="_css/main.css" rel="stylesheet" media="screen, projection">
+</head>
+
+<body>
+<header class="graphicHeader pageHeader">
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="http://3.bp.blogspot.com/-PTty3CfTGnA/TpZOEjTQ_WI/AAAAAAAAAeo/KeKt_D5X2xo/s1600/js.jpg" class="" alt="Image"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Chart Data</a></li>
+                    <li><a href="../ImageAnalysis/index.html">Image Analysis</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div>
+</nav>
+
+
+</header>
+<header class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headerBackground headerDim">
+ <div class="container">
+   <div class="row">
+  <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-2">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-md-offset-1">
+       <img src="http://learnphilanthropy.org/wp-content/themes/knowledgepress/images/piechart.png" class="img-responsive img-header" alt="Image">
+     </div>
+     <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+       <h1 class="pull-left">JavaScript Code Clinic</h1>
+       <img src="http://3.bp.blogspot.com/-PTty3CfTGnA/TpZOEjTQ_WI/AAAAAAAAAeo/KeKt_D5X2xo/s1600/js.jpg" class="img-responsive img-rounded" alt="Image">
+       <h2>Exploring Your Data</h2>
+     </div></div>
+
+
+   </div>
+ </div>
+</header>
+
+<article>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="row filterBackground">
+      <div class="container containerPadding">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 inputPaddingLeft">
+          <div class="input-group date articleDim" >
+            <input type="text" class="form-control" placeholder="Start Date" id="datepicker1" data-provide="datepicker" data-date-format="mm/dd/yyyy" readonly>
+            <span class="input-group-addon add-on">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+         <div class="filterContainerPad text-center">
+           <ul class="btn-group btn-group-justified filterDim">
+            <li type="button"  class="btn btn-default " id="btn-0">Bar</li>
+            <li type="button"  class="btn btn-default " id="btn-1">Area</li>
+            <li type="button"  class="btn btn-default " id="btn-2">Line</li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 inputPaddingRight">
+          <div class="input-group articleDim">
+            <input type="text" class="form-control" placeholder="End Date" id="datepicker2" data-provide="datepicker" data-date-format="mm/dd/yyyy" readonly>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row graphBackground">
+      <div class="container graphArea">
+        <div class="row">
+          <p class="pTop">In the Chart Area below is weather data from lake Pond Orllie </p>
+          <div id="chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<footer class="footerBackground pstylefooter">
+  <div class="container">
+    <div class="row">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+  <div class="panel panel-default footerPanel">
+    <p> Based on Lynda Code ClinicLorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio dolor ?</p>
+  </div>
+  </div>
+  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 ">
+    <div class="media">
+      <ul>
+        <li ><a href="#" class="media-left">
+          <img class="media-object" src="http://www.placehold.it/50x50" alt="image of Jacob"></a>
+            <span class="media-body">
+            <h4 class="media-heading">Jacob Houser</h4>
+            <p>jacob has been working with us on this platform for over 2 year were thankful</p></span></li>
+        <li ><a href="#" class="media-left">
+          <img class="media-object" src="http://www.placehold.it/50x50" alt="image of Jacob"></a>
+            <span class="media-body">
+            <h4 class="media-heading">Our Sponsors</h4>
+            <p>thanks to our sponsors for helping us make it online, were very thankful</p></span></li>        <li ><a href="#" class="media-left">
+        <img class="media-object" src="http://www.placehold.it/50x50" alt="image of Jacob"></a>
+            <span class="media-body">
+            <h4 class="media-heading">You</h4>
+            <p>Thanks to our Uusers we've now got a platform to share thank you!</p></span></li>
+      </ul>
+    </div>
+    </div></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="datepicker/js/bootstrap-datepicker.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="_scripts/c3-0.4.10/c3.min.js" ></script>
+<script src="_scripts/script.js"></script>
+
+</body>
+</html>
